@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E0B3388175C5E7400B7D8C6 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0B3387175C5E7400B7D8C6 /* NSDate+Helper.m */; };
+		9E0B338C175C5F8400B7D8C6 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0B338A175C5F8400B7D8C6 /* CustomViewController.m */; };
+		9E0B338D175C5F8400B7D8C6 /* CustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E0B338B175C5F8400B7D8C6 /* CustomViewController.xib */; };
 		9E8FC514173694AF00014460 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8FC513173694AF00014460 /* UIKit.framework */; };
 		9E8FC516173694AF00014460 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8FC515173694AF00014460 /* Foundation.framework */; };
 		9E8FC518173694AF00014460 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8FC517173694AF00014460 /* CoreGraphics.framework */; };
@@ -22,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E0B3386175C5E7400B7D8C6 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		9E0B3387175C5E7400B7D8C6 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		9E0B3389175C5F8400B7D8C6 /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
+		9E0B338A175C5F8400B7D8C6 /* CustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
+		9E0B338B175C5F8400B7D8C6 /* CustomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomViewController.xib; sourceTree = "<group>"; };
 		9E8FC510173694AF00014460 /* scrollview-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "scrollview-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E8FC513173694AF00014460 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		9E8FC515173694AF00014460 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -86,6 +94,8 @@
 		9E8FC519173694AF00014460 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				9E0B3386175C5E7400B7D8C6 /* NSDate+Helper.h */,
+				9E0B3387175C5E7400B7D8C6 /* NSDate+Helper.m */,
 				9EE11ABD1752465C00E2FCA1 /* HZLazyScrollView */,
 				9E8FC522173694AF00014460 /* AppDelegate.h */,
 				9E8FC523173694AF00014460 /* AppDelegate.m */,
@@ -93,6 +103,9 @@
 				9E8FC52C173694AF00014460 /* ViewController.m */,
 				9E8FC52E173694AF00014460 /* ViewController.xib */,
 				9E8FC51A173694AF00014460 /* Supporting Files */,
+				9E0B3389175C5F8400B7D8C6 /* CustomViewController.h */,
+				9E0B338A175C5F8400B7D8C6 /* CustomViewController.m */,
+				9E0B338B175C5F8400B7D8C6 /* CustomViewController.xib */,
 			);
 			name = classes;
 			path = "scrollview-demo";
@@ -177,6 +190,7 @@
 				9E8FC528173694AF00014460 /* Default@2x.png in Resources */,
 				9E8FC52A173694AF00014460 /* Default-568h@2x.png in Resources */,
 				9E8FC530173694AF00014460 /* ViewController.xib in Resources */,
+				9E0B338D175C5F8400B7D8C6 /* CustomViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +205,8 @@
 				9E8FC524173694AF00014460 /* AppDelegate.m in Sources */,
 				9E8FC52D173694AF00014460 /* ViewController.m in Sources */,
 				9EE11AC01752468C00E2FCA1 /* HZLazyScrollView.m in Sources */,
+				9E0B3388175C5E7400B7D8C6 /* NSDate+Helper.m in Sources */,
+				9E0B338C175C5F8400B7D8C6 /* CustomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

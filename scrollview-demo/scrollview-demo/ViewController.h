@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "HZLazyScrollView.h"
+#import "NSDate+Helper.h"
+#import "CustomViewController.h"
 
 @interface ViewController : UIViewController <HZLazyScrollViewDataSource>
 {
     NSMutableArray *_viewControllers;
     HZLazyScrollView *_lazyScrollView;
+    NSArray *_dates;
 }
 @end
