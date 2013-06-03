@@ -21,16 +21,14 @@
     [super viewDidLoad];
     _viewControllers = [NSMutableArray arrayWithCapacity:500];
     _lazyScrollView = [[HZLazyScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.bounds.size.height)];
-    _lazyScrollView.delegate = self;
     _lazyScrollView.dataSourceDelegate = self;
     [self.view addSubview:_lazyScrollView];
     [_lazyScrollView reloadData];
 }
 
-- (NSInteger)lazyScrollView:(HZLazyScrollView *)lazyScrollView
-              numberOfCount:(NSInteger)aCount
+- (NSInteger)numberCountOfLazyScrollView:(HZLazyScrollView *)lazyScrollView
 {
-    return 500;
+    return [_viewControllers count];
 }
 
 - (UIViewController *)lazyScrollView:(HZLazyScrollView *)lazyScrollView

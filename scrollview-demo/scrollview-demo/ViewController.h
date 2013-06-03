@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HZLazyScrollView.h"
 
-@interface ViewController : UIViewController <HZLazyScrollViewDelegate, HZLazyScrollViewDataSource>
+@interface ViewController : UIViewController <HZLazyScrollViewDataSource>
 {
     NSMutableArray *_viewControllers;
     HZLazyScrollView *_lazyScrollView;
