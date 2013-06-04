@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66EFFB57175DCF42005A64C7 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EFFB56175DCF42005A64C7 /* HeaderView.m */; };
 		9E0B3388175C5E7400B7D8C6 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0B3387175C5E7400B7D8C6 /* NSDate+Helper.m */; };
 		9E0B338C175C5F8400B7D8C6 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0B338A175C5F8400B7D8C6 /* CustomViewController.m */; };
 		9E0B338D175C5F8400B7D8C6 /* CustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E0B338B175C5F8400B7D8C6 /* CustomViewController.xib */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66EFFB55175DCF42005A64C7 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		66EFFB56175DCF42005A64C7 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		9E0B3386175C5E7400B7D8C6 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
 		9E0B3387175C5E7400B7D8C6 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
 		9E0B3389175C5F8400B7D8C6 /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 				9E0B3389175C5F8400B7D8C6 /* CustomViewController.h */,
 				9E0B338A175C5F8400B7D8C6 /* CustomViewController.m */,
 				9E0B338B175C5F8400B7D8C6 /* CustomViewController.xib */,
+				66EFFB55175DCF42005A64C7 /* HeaderView.h */,
+				66EFFB56175DCF42005A64C7 /* HeaderView.m */,
 			);
 			name = classes;
 			path = "scrollview-demo";
@@ -207,6 +212,7 @@
 				9EE11AC01752468C00E2FCA1 /* HZLazyScrollView.m in Sources */,
 				9E0B3388175C5E7400B7D8C6 /* NSDate+Helper.m in Sources */,
 				9E0B338C175C5F8400B7D8C6 /* CustomViewController.m in Sources */,
+				66EFFB57175DCF42005A64C7 /* HeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

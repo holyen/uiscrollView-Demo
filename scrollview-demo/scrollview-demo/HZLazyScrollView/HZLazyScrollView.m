@@ -7,6 +7,7 @@
 //
 
 #import "HZLazyScrollView.h"
+#import "CustomViewController.h"
 
 @interface HZLazyScrollView ()
 
@@ -18,7 +19,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.pagingEnabled = NO;
         self.delegate = self;
         self.alwaysBounceHorizontal = NO;
     }
@@ -33,6 +33,14 @@
     [self setContentOffset:CGPointMake(0, 0)];
     self.pagingEnabled = YES;
     self.showsHorizontalScrollIndicator = YES;
+    NSMutableArray *posiInfos = [NSMutableArray arrayWithCapacity:_count];
+    for (int i = 0; i < _count; i ++) {
+        CGRect rect = CGRectMake(320 * i, 0, 320, self.bounds.size.height);
+        NSValue *rectValue = [NSValue valueWithCGRect:rect];
+        [posiInfos addObject:rectValue];
+    }
+    _positionInfos = posiInfos;
+    
 }
 
 - (UIViewController *)viewControllerByIndex:(NSInteger)aIndex
@@ -53,9 +61,24 @@
         CGRect frame = self.frame;
         frame.origin.x = frame.size.width * page;
         frame.origin.y = 0;
-        frame.size.height = frame.size.height - 80;
+        //frame.size.height = frame.size.height;
         viewController.view.frame = frame;
         [self addSubview:viewController.view];
+    }
+}
+
+- (void)removeViewWithPage:(NSNumber *)aIndex
+{
+    int page = [aIndex integerValue];
+    if (page < 0) {
+        return;
+    }
+    if (page >= _count) {
+        return;
+    }
+    UIViewController *viewController = [_dataSourceDelegate lazyScrollView:self viewAtIndex:page];
+    if (viewController.view.superview != nil) {
+        [viewController.view removeFromSuperview];
     }
 }
 
@@ -65,18 +88,38 @@
 {
     float pageWidth = self.bounds.size.width;
     float currentOff = self.contentOffset.x;
-    int page = ((currentOff - pageWidth / 2) / pageWidth) + 1;
-    NSLog(@"page = %d",page);
-    
-    [self loadScrollViewWithPage:page - 1];
-    [self loadScrollViewWithPage:page];
-    [self loadScrollViewWithPage:page + 1];
+    _currentPage = ((currentOff - pageWidth / 2) / pageWidth) + 1;
+    UIViewController *viewController = [_dataSourceDelegate lazyScrollView:self viewAtIndex:_currentPage];
+
+    NSLog(@"page = %d date = %@",_currentPage,((CustomViewController *)viewController).dateLabel.text);
+    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self loadScrollViewWithPage:_currentPage - 1];
+    [self loadScrollViewWithPage:_currentPage];
+    [self loadScrollViewWithPage:_currentPage + 1];
+    NSLog(@"current chirdens: %d",[self.subviews count]);
     
 }
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
+//- (void)layoutSubviews
+//{
+//    [super layoutSubviews];
+//    NSLog(@"layoutSubviews");
+//    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(removeSubs) object:nil];
+//    [self performSelector:@selector(removeSubs) withObject:nil afterDelay:0.25];
+//}
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    
+}
+
+- (void)removeSubs
+{
+    UIViewController *viewController = [_dataSourceDelegate lazyScrollView:self viewAtIndex:_currentPage];
+    NSLog(@"will remove: page = %d,%d, date = %@",_currentPage - 1,_currentPage + 1,((CustomViewController *)viewController).dateLabel.text);
+    
+    [self performSelector:@selector(removeViewWithPage:) withObject:[NSNumber numberWithInt:_currentPage - 2] afterDelay:0.25];
+    [self performSelector:@selector(removeViewWithPage:) withObject:[NSNumber numberWithInt:_currentPage + 2] afterDelay:0.25];
 }
 
 @end

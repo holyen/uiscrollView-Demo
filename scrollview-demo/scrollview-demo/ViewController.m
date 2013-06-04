@@ -24,12 +24,15 @@
     for (int i = 0; i < [_dates count]; i ++) {
         [_viewControllers addObject:[NSNull null]];
     }
-    self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     _lazyScrollView = [[HZLazyScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.bounds.size.height)];
     _lazyScrollView.dataSourceDelegate = self;
-    _lazyScrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin;
+    _lazyScrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:_lazyScrollView];
     [_lazyScrollView reloadData];
+    
+    _headerView = [[HeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 15) dates:_dates];
+    [self.view addSubview:_headerView];
+    [_headerView reloadData];
 }
 
 - (NSArray *)calculateDateInfo
@@ -79,7 +82,6 @@
     return totalDate;
 }
 
-
 - (NSInteger)numberCountOfLazyScrollView:(HZLazyScrollView *)lazyScrollView
 {
     return [_viewControllers count];
@@ -92,7 +94,6 @@
     id res = [_viewControllers objectAtIndex:aIndex];
     if (res == [NSNull null]) {
         CustomViewController *contr = [[CustomViewController alloc] initWithNibName:nil bundle:nil];
-        contr.view.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         contr.view.backgroundColor = [UIColor colorWithRed: (CGFloat)arc4random()/ARC4RANDOM_MAX
                                                      green: (CGFloat)arc4random()/ARC4RANDOM_MAX
                                                       blue: (CGFloat)arc4random()/ARC4RANDOM_MAX

@@ -22,6 +22,8 @@
 @interface HZLazyScrollView : UIScrollView <UIScrollViewDelegate>
 {
     NSUInteger _count;
+    NSUInteger _currentPage;
+    NSArray *_positionInfos;//每个cell的位置信息
 }
 
 @property (nonatomic, assign) id<HZLazyScrollViewDataSource> dataSourceDelegate;
